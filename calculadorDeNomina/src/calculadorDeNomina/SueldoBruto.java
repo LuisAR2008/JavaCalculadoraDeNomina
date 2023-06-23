@@ -1,19 +1,17 @@
 package calculadorDeNomina;
 
-class SueldoNeto {
-    private double sueldoBruto;
+class SueldoBruto {
+     private double horasTrabajo;
+     private double horasExtra;
 
-    public SueldoNeto(double sueldoBruto) {
-        this.sueldoBruto = sueldoBruto;
+    public SueldoBruto(double horasTrabajo, double horasExtra) {
+        this.horasTrabajo = horasTrabajo;
+        this.horasExtra = horasExtra;
     }
 
-    public double calcularSueldoNeto() {
-        double impuesto;
-        if (sueldoBruto < 2000) {
-            impuesto = sueldoBruto * 0.16;
-        } else {
-            impuesto = sueldoBruto * 0.18;
-        }
-        return sueldoBruto - impuesto;
+    public double calcularSueldoBruto() {
+        double sueldoBase = horasTrabajo * 72.87;
+        double sueldoExtra = horasExtra * 25.96;
+        return sueldoBase + sueldoExtra;
     }
 }
